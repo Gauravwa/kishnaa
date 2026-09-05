@@ -17,7 +17,7 @@ hic-pageflip:defined {
 hic-pageflip:defined {
     width: 90svw;
     height: calc(100svh - 4em);
-    --img0: url("assets/Krishna1.jpg");
+    --img0: url("assets/krishna1.jpg");
     --img1: url("assets/Krishna2.jpg");
     --img2: url("assets/Krishna3.jpg");
     --img3: url("assets/Krishna4.png");
