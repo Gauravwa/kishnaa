@@ -1,1 +1,1 @@
-[orinal source]https://www.bram.us/2026/09/02/html-in-canvas-pageflip/
+https://www.bram.us/2026/09/02/html-in-canvas-pageflip/
