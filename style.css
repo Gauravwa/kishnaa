@@ -1,0 +1,110 @@
+﻿/* Prevent content from being shown when not defined */
+hic-pageflip:not(:defined),
+hic-pageflip-page:not(:defined) {
+    display: none !important;
+}
+
+/* Fade-in hic-pageflip once defined */
+hic-pageflip:defined {
+    transition: opacity 0.35s ease-out;
+
+    @starting-style {
+        opacity: 0;
+    }
+}
+
+/* Stretch it */
+hic-pageflip:defined {
+    width: 90svw;
+    height: calc(100svh - 4em);
+    --img0: url("/assets/Krishna1.jpg");
+    --img1: url("/assets/Krishna2.jpg");
+    --img2: url("/assets/Krishna3.jpg");
+    --img3: url("/assets/Krishna4.png");
+    --font-display: 'Cinzel Decorative', 'Rozha One', serif;
+    --font-verse: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Alegreya', Georgia, serif;
+    --bg: linear-gradient(0deg, hsl(0 0% 0% / 0.8) 13.00%, hsl(0 0% 0% / 0.799) 18.63%, hsl(0 0% 0% / 0.7962) 24.07%, hsl(0 0% 0% / 0.79098) 29.29%, hsl(0 0% 0% / 0.78316) 34.30%, hsl(0 0% 0% / 0.77207) 39.16%, hsl(0 0% 0% / 0.75705) 43.84%, hsl(0 0% 0% / 0.73706) 48.36%, hsl(0 0% 0% / 0.71114) 52.73%, hsl(0 0% 0% / 0.6775) 56.93%, hsl(0 0% 0% / 0.63427) 60.97%, hsl(0 0% 0% / 0.57955) 64.86%, hsl(0 0% 0% / 0.51342) 68.58%, hsl(0 0% 0% / 0.43933) 72.14%, hsl(0 0% 0% / 0.36486) 75.54%, hsl(0 0% 0% / 0.29725) 78.75%, hsl(0 0% 0% / 0.23902) 81.79%, hsl(0 0% 0% / 0.19039) 84.64%, hsl(0 0% 0% / 0.14982) 87.30%, hsl(0 0% 0% / 0.11607) 89.77%, hsl(0 0% 0% / 0.08768) 92.04%, hsl(0 0% 0% / 0.06378) 94.09%, hsl(0 0% 0% / 0.04359) 95.92%, hsl(0 0% 0% / 0.02652) 97.52%, hsl(0 0% 0% / 0.01219) 98.88%, hsl(0 0% 0% / 0) 100.00%);
+}
+
+hic-pageflip-page {
+    padding: 2em 3em;
+    color: hsl(0 0% 98%);
+    border: 1px solid #111827;
+    font-family: var(--font-body);
+
+
+    &:first-of-type {
+        background: var(--img0) center center / cover fixed no-repeat;
+
+        &::after {
+            background: var(--bg);
+            content: '';
+            position: absolute;
+            inset: 0 0 0 0;
+            z-index: -2;
+        }
+    }
+
+    &:nth-of-type(2) {
+        background: var(--img1) center center / cover fixed no-repeat;
+
+        &::after {
+            background: var(--bg);
+            content: '';
+            position: absolute;
+            inset: 0 0 0 0;
+            z-index: -2;
+        }
+    }
+
+    &:nth-of-type(3) {
+        background: var(--img2) center center / cover fixed no-repeat;
+    }
+
+    &:nth-of-type(4) {
+        background: var(--img3) center center / contain fixed no-repeat;
+    }
+
+
+
+    .rainbow {
+        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow:hidden;
+    }
+
+    html {
+        font-family: system-ui;
+    }
+
+
+
+    h1 {
+        font-family: var(--font-display);
+        font-size: 2.2rem;
+        margin: 0 0 0.5rem;
+    }
+
+    .content {
+        display: grid;
+        gap: 2em;
+        height: stretch;
+        place-content: end;
+        text-wrap: pretty;
+        text-align: center;
+    }
+
+    .sanskrit {
+        font-family: var(--font-verse);
+        font-size: 1.15rem;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
